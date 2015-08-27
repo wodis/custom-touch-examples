@@ -15,22 +15,22 @@ import android.widget.ArrayAdapter;
 
 public class MainActivity extends ListActivity implements OnItemClickListener {
 
-	private static final String[] ITEMS = {
+    private static final String[] ITEMS = {
             "Move Logger Example", "Touch Listener Example",
             "Touch Delegate Example", "Touch Forward Example",
             "Pan Example", "Pan Gesture Example",
-	        "Multi-Touch Example", "Disable Touch Intercept"};
-	
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, ITEMS);
-		getListView().setAdapter(adapter);
-		getListView().setOnItemClickListener(this);
-	}
+            "Multi-Touch Example", "Disable Touch Intercept"};
 
-	@Override
-	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, ITEMS);
+        getListView().setAdapter(adapter);
+        getListView().setOnItemClickListener(this);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position) {
             case 0: //Move Logger View
                 startActivity(new Intent(this, MoveLoggerActivity.class));
