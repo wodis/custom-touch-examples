@@ -2,7 +2,7 @@ apply plugin: 'android'
 
 android {
     compileSdkVersion 17
-    buildToolsVersion = 18
+    buildToolsVersion = 20
 
     sourceSets {
         main {
