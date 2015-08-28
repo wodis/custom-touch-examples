@@ -37,8 +37,8 @@ public class MoveLoggerActivity extends Activity implements View.OnTouchListener
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-        if(event.getAction() == MotionEvent.ACTION_DOWN) {
-            mInitialTouch.set((int)event.getX(), (int)event.getY());
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            mInitialTouch.set((int) event.getX(), (int) event.getY());
             //Must declare interest to get more events
             return true;
         } else if (event.getAction() == MotionEvent.ACTION_MOVE) {
@@ -47,9 +47,14 @@ public class MoveLoggerActivity extends Activity implements View.OnTouchListener
                     Log.i(TAG, String.format("Top Move: %.1f,%.1f", event.getX(), event.getY()));
                     break;
                 case R.id.view_logslop:
-                    if ( Math.abs(event.getX() - mInitialTouch.x) > mTouchSlop
-                            || Math.abs(event.getY() - mInitialTouch.y) > mTouchSlop ) {
+                    if (Math.abs(event.getX() - mInitialTouch.x) > mTouchSlop
+                            || Math.abs(event.getY() - mInitialTouch.y) > mTouchSlop) {
                         Log.i(TAG, String.format("Bottom Move: %.1f,%.1f", event.getX(), event.getY()));
+                    } else {
+                        Log.i(TAG, String.format("Slop: %d ,CurrentX: %f , CurrentY: %f",
+                                mTouchSlop,
+                                (event.getX() - mInitialTouch.x),
+                                (event.getY() - mInitialTouch.y)));
                     }
                     break;
                 default:

@@ -8,9 +8,12 @@ package com.examples.customtouch;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.Toast;
+
 import com.examples.customtouch.widget.TouchForwardLayout;
 
 public class TouchForwardActivity extends Activity {
@@ -23,6 +26,12 @@ public class TouchForwardActivity extends Activity {
 		
 		Button button = new Button(this);
 		button.setText("You Can't Miss Me!");
+		button.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(getApplicationContext(),"Clicked",Toast.LENGTH_SHORT).show();
+			}
+		});
 		
 		FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
                 LayoutParams.WRAP_CONTENT, Gravity.CENTER);

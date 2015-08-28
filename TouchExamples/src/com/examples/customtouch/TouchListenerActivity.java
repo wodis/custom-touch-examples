@@ -35,6 +35,8 @@ public class TouchListenerActivity extends Activity implements View.OnTouchListe
          * Consume the events here so the buttons cannot process them
          * if the CheckBox in the UI is checked
          */
+        this.getNameForEvent(event);
+
         return mLockBox.isChecked();
     }
 

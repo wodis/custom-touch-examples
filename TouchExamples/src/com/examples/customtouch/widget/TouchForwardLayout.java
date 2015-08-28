@@ -61,6 +61,6 @@ public class TouchForwardLayout extends FrameLayout {
         event.offsetLocation(-mTouchOffsetPoint.x + child.getWidth() / 2,
                 -mTouchOffsetPoint.y + child.getHeight() / 2);
 		
-		return child.dispatchTouchEvent(event);		
+		return child.dispatchTouchEvent(event);
 	}
 }
